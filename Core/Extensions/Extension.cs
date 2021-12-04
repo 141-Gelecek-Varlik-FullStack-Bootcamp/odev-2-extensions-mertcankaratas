@@ -1,4 +1,4 @@
-﻿using Core.Attributes;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,22 +17,20 @@ namespace Core.Extensions
         }
 
 
-        [Log]
+        
         public static string DolarToTurkishLira(this float dolar)
         {
             return "Dolar today exchange rate 13,40 " + dolar + " equals to Turkish lira: " + dolar * 13.40;
         }
 
-        public static string ReflactionTypeTest(object v)
+        public static string ReflactionType(Type type)
         {
-            throw new NotImplementedException();
+            return type.GetType().ToString();
         }
 
         public static string MethodInfoAssemblyLocation(Type type)
         {
-
             return type.GetTypeInfo().Assembly.Location;
-
 
         }
 

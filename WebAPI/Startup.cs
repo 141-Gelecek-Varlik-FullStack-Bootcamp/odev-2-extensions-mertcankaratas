@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
@@ -15,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.ActionFilters;
 
 namespace WebAPI
 {
@@ -38,6 +40,7 @@ namespace WebAPI
             services.AddSingleton<IUserDal, UserDal>();
             //services.AddScoped<IUserService, UserManager>();
             //services.AddScoped<IUserDal,UserDal>();
+            services.AddScoped<ValidationFilterAttribute>();
 
             services.AddCors();
             services.AddHttpContextAccessor();
@@ -54,7 +57,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v"));
+              
             }
 
 

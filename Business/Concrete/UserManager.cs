@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Core.Attributes;
+
 using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
@@ -36,7 +36,7 @@ namespace Business.Concrete
             _userDal.Delete(user);
         }
 
-        [Validation("User")]
+        
         public List<User> GetAll()
         {
             return _userDal.Getall();

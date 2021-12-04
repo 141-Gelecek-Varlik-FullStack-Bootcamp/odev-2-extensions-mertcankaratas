@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+
 using DataAccess.Abstract;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.ActionFilters;
 
 namespace WebAPI.Controllers
 {
@@ -16,6 +18,7 @@ namespace WebAPI.Controllers
     public class UserController : ControllerBase
     {
         IUserService _userService;
+        
         //constructor injection 
         public UserController(IUserService userService)
         {
@@ -24,8 +27,9 @@ namespace WebAPI.Controllers
 
 
         //Sistemde olan tüm kullanıcıları listeler 
+        
         [HttpGet("getall")]
-
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public IActionResult Getall()
         {
             var result = _userService.GetAll();

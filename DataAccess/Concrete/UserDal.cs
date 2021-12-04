@@ -1,4 +1,4 @@
-﻿using Core.Attributes;
+﻿
 using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
@@ -32,7 +32,7 @@ namespace DataAccess.Concrete
             };
         }
 
-        [Log()]
+     
         public void Add(User entity)
         {
             _users.Add(entity);
