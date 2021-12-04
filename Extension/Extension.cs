@@ -2,7 +2,7 @@
 
 namespace Extension
 {
-    public static class Extension
+     public static class Extension
     {
         public static string Logger(this string text)
         {

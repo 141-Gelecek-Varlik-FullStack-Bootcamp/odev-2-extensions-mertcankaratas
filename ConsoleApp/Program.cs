@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Core.Attributes;
+using Core.Extensions;
 using DataAccess.Concrete;
-using Entity.Concrete;
-using Extension;
+using System;
+
 namespace ConsoleApp
 {
     class Program
@@ -11,19 +12,16 @@ namespace ConsoleApp
             //1. extension para biçimi formatlama
             float Dolar = 13;
             Console.WriteLine(Dolar.DolarToTurkishLira());
-            Console.WriteLine(Extension.Extension.DolarToTurkishLira(15));
+            Console.WriteLine(Core.Extensions.CollectiveExtension.DolarToTurkishLira(15));
 
 
-            UserDal userDal = new UserDal();
-            userDal.CreateAccount(new User());
-
-           
-            
-
-           
+            //Console.WriteLine(Core.Extensions.CollectiveExtension.ReflactionTypeTest(TestMethod));
 
             Console.ReadLine();
            
         }
+
+
+        
     }
 }
