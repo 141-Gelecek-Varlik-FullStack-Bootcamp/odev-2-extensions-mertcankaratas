@@ -8,26 +8,19 @@ using System.Threading.Tasks;
 
 namespace WebAPI.ActionFilters
 {
-    public class ValidationFilterAttribute : IActionFilter
+    public class ValidationFilterAttribute : Attribute,IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context)
         {
-
+            //loglama burada yapıldı
+            var time = DateTime.Now;
+            var message = "Bu tarihte islem gerceklesti" + time;
+           
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //var param = context.ActionArguments.SingleOrDefault(p => p.Value is IEntity);
-            //if (param.Value == null)
-            //{
-            //    context.Result = new BadRequestObjectResult("object is null");
-            //    return;
-            //}
-
-            //context.Result = new OkObjectResult("teşekkürler");
-            //return;
-
-            //context.Result = new OkObjectResult("teşekkürler");
+            //kullanıcı türü enum üstünde attandı ve kontrol edildi admin olduğunda işlemleri gerçekleştirebilmekteyiz
             UserType userType = UserType.Admin;
             if (userType!=UserType.Admin)
             {

@@ -43,6 +43,8 @@ namespace WebAPI.Controllers
 
         //Bir kullanıcıyı eklemek için kullanılır
         [HttpPost("add")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+
         public IActionResult Add(User user)
         {
             if (user != null)
@@ -57,6 +59,8 @@ namespace WebAPI.Controllers
 
         //Bir kullanıcıyı silmek için kullanılır
         [HttpDelete("delete")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+
         public IActionResult Delete(User user)
         {
             if (user != null)
@@ -70,6 +74,8 @@ namespace WebAPI.Controllers
 
         //Bir kullanıcıyı güncellemek için kullanılır
         [HttpPut("update")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+
         public IActionResult Update(User user)
         {
             if (user != null)
