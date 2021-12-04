@@ -27,8 +27,8 @@ namespace Core.Extensions
         {
             throw new NotImplementedException();
         }
-               
-        public static string TypeOfMethod(Type type)
+
+        public static string MethodInfoAssemblyLocation(Type type)
         {
 
             return type.GetTypeInfo().Assembly.Location;
@@ -36,5 +36,16 @@ namespace Core.Extensions
 
         }
 
+        public static string GetMethods(Type type, string methodsName = null)
+        {
+            var methods = type.GetMethods();
+
+            foreach (var info in methods)
+            {
+                methodsName += info.ToString()+"\n";
+            }
+
+            return methodsName;
+        }
     }
 }

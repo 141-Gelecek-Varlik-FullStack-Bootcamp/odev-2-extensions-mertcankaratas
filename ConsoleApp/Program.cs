@@ -15,8 +15,10 @@ namespace ConsoleApp
             Console.WriteLine(Core.Extensions.CollectiveExtension.DolarToTurkishLira(15));
             
             //2. extension reflaction
-            Console.WriteLine(Core.Extensions.CollectiveExtension.TypeOfMethod(typeof(int)));
-         
+            Console.WriteLine(Core.Extensions.CollectiveExtension.MethodInfoAssemblyLocation(typeof(UserDal)));
+            //2. userdal'daki methodların isimlerini gösteren extension
+            Console.WriteLine(Core.Extensions.CollectiveExtension.GetMethods(typeof(UserDal)));
+ 
             
 
             Console.ReadLine();
