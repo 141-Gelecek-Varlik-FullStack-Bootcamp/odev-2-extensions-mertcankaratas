@@ -13,9 +13,11 @@ namespace ConsoleApp
             float Dolar = 13;
             Console.WriteLine(Dolar.DolarToTurkishLira());
             Console.WriteLine(Core.Extensions.CollectiveExtension.DolarToTurkishLira(15));
-
-
-            //Console.WriteLine(Core.Extensions.CollectiveExtension.ReflactionTypeTest(TestMethod));
+            
+            //2. extension reflaction
+            Console.WriteLine(Core.Extensions.CollectiveExtension.TypeOfMethod(typeof(int)));
+         
+            
 
             Console.ReadLine();
            

@@ -1,6 +1,7 @@
 ﻿using Core.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -26,16 +27,11 @@ namespace Core.Extensions
         {
             throw new NotImplementedException();
         }
-
-        public static void ReflactionTypeTest(this MethodBase methodInfo)
+               
+        public static string TypeOfMethod(Type type)
         {
 
-            //var result = methodInfo.GetType().GetMember(methodInfo.ToString()).First().GetType().Name;
-
-           
- 
-
-          //  return result;
+            return type.GetTypeInfo().Assembly.Location;
 
 
         }
